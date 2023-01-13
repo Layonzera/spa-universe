@@ -21,6 +21,7 @@ img {
   left: 0;
   z-index: -1;
   object-fit: cover;
+  animation: topdown 400ms 250ms backwards;
 }
 
 nav {
@@ -64,7 +65,11 @@ h1 {
   margin-bottom: 2.4rem;
 }
 
-button {
+h1 {
+  animation: toright 700ms 350ms backwards;
+}
+
+.content a {
   border: 0.2rem solid #ffffff;
   padding: 1.2rem 3.2rem;
   background: none;
@@ -72,10 +77,9 @@ button {
   text-transform: uppercase;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-button:hover {
+.content a:hover {
   color: #02799d;
   background-color: #ffffff;
 }
@@ -90,4 +94,53 @@ p {
   font-size: 1.8rem;
   line-height: 160%;
   color: #e1e1e6;
+  animation: toleft 700ms 450ms backwards;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toright {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toleft {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
